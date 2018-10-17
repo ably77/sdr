@@ -167,6 +167,6 @@ Verify that Gurjeet has full superuser permissions by clicking on his name in th
 
 ![](https://github.com/ably77/sdr/blob/master/resources/rbac5.png)
 
-# Task 7
+# Task 7 - group
 
-# Task 8
+## Navigate the DC/OS Appstudio App together as a team and discuss SMACK stack
