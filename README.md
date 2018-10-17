@@ -20,29 +20,6 @@ Select Review and Run --> Run Service to initiate scaling of the Cassandra servi
 
 ![](https://github.com/ably77/sdr/blob/master/resources/cassandra3.png)
 
-Using the DC/OS Cassandra CLI you can also check the status of your Cassandra service
-```
-dcos cassandra plan status deploy --name=/prod/dataservices/cassandra
-```
-
-Output should look like below:
-```
-$ dcos cassandra plan status deploy --name=/prod/dataservices/cassandra
-deploy (<UNKNOWN> strategy) (IN_PROGRESS)
-└─ node-deploy (<UNKNOWN> strategy) (IN_PROGRESS)
-   ├─ node-0:[server] (COMPLETE)
-   ├─ node-1:[server] (COMPLETE)
-   ├─ node-2:[server] (COMPLETE)
-   └─ node-3:[server] (STARTING)
-
-$ dcos cassandra plan status deploy --name=/prod/dataservices/cassandra
-deploy (<UNKNOWN> strategy) (COMPLETE)
-└─ node-deploy (<UNKNOWN> strategy) (COMPLETE)
-   ├─ node-0:[server] (COMPLETE)
-   ├─ node-1:[server] (COMPLETE)
-   ├─ node-2:[server] (COMPLETE)
-   └─ node-3:[server] (COMPLETE)
-```
 
 # Task 2 - Data Services Team
 
