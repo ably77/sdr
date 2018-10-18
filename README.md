@@ -1,4 +1,40 @@
-# Task 1 - Data Services Team
+# Task 1 - superuser
+
+## Create a User
+
+Use case: Since many people are using this cluster, we want to be able to control access to the cluster and what permissions they have
+
+In the sidebar navigate to Organizations --> Users and select add new user + at the top right
+
+![](https://github.com/ably77/sdr/blob/master/resources/rbac1.png)
+
+Create the new-hire Gurjeet with the information below:
+- Fullname: gurjeet nijjar
+- Name: gurjeet
+- Password: mesosphere
+
+![](https://github.com/ably77/sdr/blob/master/resources/rbac2.png)
+
+
+# Task 2 - superuser
+
+Use case: Assigning users to groups allows the user to inherit the permissions of the whole group
+
+## Add users to Groups
+
+Go to the Organizations --> Groups page and select the Superusers group
+
+![](https://github.com/ably77/sdr/blob/master/resources/rbac3.png)
+
+In the Groups page, select users and add gurjeet to the superusers group:
+
+![](https://github.com/ably77/sdr/blob/master/resources/rbac4.png)
+
+Verify that Gurjeet has full superuser permissions by clicking on his name in the group
+
+![](https://github.com/ably77/sdr/blob/master/resources/rbac5.png)
+
+# Task 3 - Data Services Team
 
 ## Scale up Cassandra
 
@@ -21,7 +57,7 @@ Select Review and Run --> Run Service to initiate scaling of the Cassandra servi
 ![](https://github.com/ably77/sdr/blob/master/resources/cassandra3.png)
 
 
-# Task 2 - Data Services Team
+# Task 4 - Data Services Team
 
 ## Scale up Kafka
 
@@ -41,7 +77,7 @@ Select Review and Run --> Run Service to initiate scaling of the Kafka service:
 
 Validate in the UI that a 4th Kafka broker service is healthy and running
 
-# Task 3 - Data Services Team
+# Task 5 - Data Services Team
 
 ## Deploy a Second Kafka Cluster
 
@@ -69,7 +105,7 @@ Press back and add `/prod/dataservices/` in front of `kafka-mlteam` and try to R
 
 This should be successful because you are part of a team that has access to the `/prod/dataservices/` folder!
 
-# Task 4 - Microservices Team
+# Task 6 - Microservices Team
 
 ## Scale the Message Listener
 
@@ -93,7 +129,7 @@ Check in the UI to see that the message-listener service has now scaled up
 
 Congrats! Your app is now ready to take on more incoming traffic!
 
-# Task 5 - Microservices Team
+# Task 7 - Microservices Team
 
 ## Scale up the CPU and MEM of the UI service
 
@@ -115,35 +151,33 @@ Check the DC/OS UI to see that a new UI service is deployed and then the old one
 
 ![](https://github.com/ably77/sdr/blob/master/resources/ui4.png)
 
-# Task 6 - superuser
+# Task 8 - superusers
 
-## Give team permissions
+## Deploy Kubernetes with 2 Kubernetes nodes
 
-Use case: Since many people are using this cluster, we want to be able to control access to who has what security permissions
+Use case: The VP of application development wants to standardize on Kubernetes as their container orchestrator of choice. Operations team needs to meet this demand by quickly finding a production ready solution to deploy Kubernetes or learn how to roll their own from scratch
 
-In the sidebar navigate to Organizations --> Users and select add new user + at the top right
+Navigate to the Catalog and search for Kubernetes:
 
-![](https://github.com/ably77/sdr/blob/master/resources/rbac1.png)
+![](https://github.com/ably77/sdr/blob/master/resources/k8s1.png)
 
-Create the new-hire Gurjeet with the information below:
-- Fullname: gurjeet nijjar
-- Name: gurjeet
-- Password: mesosphere
+Select the Kubernetes 1.10.7 package version from the dropdown and click Review and Run:
 
-![](https://github.com/ably77/sdr/blob/master/resources/rbac2.png)
+![](https://github.com/ably77/sdr/blob/master/resources/k8s2.png)
 
-Go to the Organizations --> Groups page and select the Superusers group
+Click on the Kubernetes section and review all of the options you have when deploying Kubernetes:
 
-![](https://github.com/ably77/sdr/blob/master/resources/rbac3.png)
+![](https://github.com/ably77/sdr/blob/master/resources/k8s3.png)
 
-In the Groups page, select users and add gurjeet to the superusers group:
+Go to Kubernetes --> Scroll down and Modify the Node Count from 1 --> 2:
 
-![](https://github.com/ably77/sdr/blob/master/resources/rbac4.png)
+![](https://github.com/ably77/sdr/blob/master/resources/k8s4.png)
 
-Verify that Gurjeet has full superuser permissions by clicking on his name in the group
+Click Review and Run and Run Service to deploy Kubernetes:
 
-![](https://github.com/ably77/sdr/blob/master/resources/rbac5.png)
+![](https://github.com/ably77/sdr/blob/master/resources/k8s5.png)
 
-# Task 7 - group
+Check the DC/OS UI --> Services page to see that Kubernetes is deploying:
 
-## Navigate the DC/OS Appstudio App together as a team and discuss SMACK stack
+![](https://github.com/ably77/sdr/blob/master/resources/k8s7.png)
+
